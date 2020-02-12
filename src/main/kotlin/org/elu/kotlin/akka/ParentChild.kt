@@ -54,7 +54,7 @@ class ParentActor : AbstractLoggingActor() {
 }
 
 fun main() {
-  val actorSystem = ActorSystem.create("part2")
+  val actorSystem = ActorSystem.create("parent-child")
   val actorRef = actorSystem.actorOf(Props.create(ParentActor::class.java), "parent")
   actorSystem.log().info("Sending Hello Kotlin")
   actorRef.tell("Hello Kotlin", ActorRef.noSender())
